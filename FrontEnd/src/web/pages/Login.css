@@ -1,0 +1,40 @@
+.Login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+    font-family: Arial, sans-serif;
+
+    .login-error {
+        color: #d93025;
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    /* Title */
+    .login-title {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 30px;
+        color: #333;
+    }
+
+    .footer-text {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+        .login-card {
+            padding: 30px 20px;
+        }
+
+        .login-title {
+            font-size: 24px;
+        }
+    }
+}

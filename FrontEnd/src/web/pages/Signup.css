@@ -1,0 +1,26 @@
+.Signup {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+    font-family: Arial, sans-serif;
+
+    .subtitle {
+        text-align: center;
+        color: #777;
+        margin-bottom: 20px;
+    }
+
+    .error {
+        color: red;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .success {
+        color: green;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}

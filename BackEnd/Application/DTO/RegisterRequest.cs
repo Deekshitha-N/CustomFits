@@ -1,0 +1,17 @@
+namespace Application.DTO;
+
+public class RegisterRequest
+{
+    public string Name { get; set; }
+    public string Email { get; set; }
+    public string Password { get; set; }
+    public string Role { get; set; }
+
+    public RegisterRequest(string name, string email, string password, string role)
+    {
+        Name = name;
+        Email = email;
+        Password = password;
+        Role = role;
+    }
+}
