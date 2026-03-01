@@ -1,0 +1,38 @@
+@import "@styles/variable.css";
+
+.InputSelect {
+	padding: 12px 15px;
+	border: 1px solid var(--input-field-border-color);
+	border-radius: 8px;
+	font-size: var(--body-text-font-16);
+	outline: none;
+	transition: border-color 0.3s, box-shadow 0.3s;
+	margin-bottom: 15px;
+	width: 100%;
+	color: var(--body-text-color);
+	font-family: var(--body-font-style);
+	-webkit-appearance: none;
+  	-moz-appearance: none;
+  	position: relative;
+	
+	& {
+		background-image: url("data:image/svg+xml;utf8,<svg fill='none' stroke='%23555555' stroke-width='2' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M6 9l6 6 6-6'/></svg>");
+	  	background-repeat: no-repeat;
+	  	background-position: right 12px center;
+	  	background-size: 18px 18px;
+	}
+
+
+	&:focus {
+		border-color: var(--input-field-focus-border-color);
+		box-shadow: 0 0 5px rgba(197, 160, 89, 0.3);
+
+		& {
+  			background-image: url("data:image/svg+xml;utf8,<svg fill='none' stroke='%23c5a059' stroke-width='2' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M6 9l6 6 6-6'/></svg>");
+		}
+	}
+
+	option {
+    	color: var(--body-text-color);
+	}
+}

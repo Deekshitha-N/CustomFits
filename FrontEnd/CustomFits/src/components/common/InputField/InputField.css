@@ -1,0 +1,19 @@
+@import "@styles/variable.css";
+
+.InputField {
+	padding: 12px 15px;
+	border: 1px solid var(--input-field-border-color);
+	border-radius: 8px;
+	font-size: 16px;
+	outline: none;
+	transition: border-color 0.3s, box-shadow 0.3s;
+	margin-bottom: 15px;
+	width: 100%;
+	color: var(--body-text-color);
+	font-family: var(--body-font-style);
+
+	&:focus {
+		border-color: var(--input-field-focus-border-color);
+		box-shadow: 0 0 5px rgba(197, 160, 89, 0.3);
+	}
+}

@@ -1,6 +1,8 @@
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import React, { useState } from "react";
+import type { ChangeEvent, FormEvent } from "react";
 import "./ForgotPassword.css";
-import "./../utilities/card-template.css";
+import "./../styles/card-template.css";
+import InputField from "../components/common/InputField/InputField";
 
 const ForgotPassword: React.FC = () => {
     const [email, setEmail] = useState<string>("");
@@ -34,14 +36,15 @@ const ForgotPassword: React.FC = () => {
                 {message && <p className="success">{message}</p>}
 
                 <form onSubmit={handleSubmit}>
-                    <input
-                        type="email"
+                    <InputField
+                        id="forgot-password-email"
+                        type="text"
                         placeholder="Email Address"
                         value={email}
                         onChange={(e: ChangeEvent<HTMLInputElement>) =>
                             setEmail(e.target.value)
                         }
-                        required
+                        required={true}
                     />
 
                     <button type="submit">Send Reset Link</button>

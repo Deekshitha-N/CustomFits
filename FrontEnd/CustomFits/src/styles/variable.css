@@ -1,0 +1,26 @@
+:root {
+  --primary-color: #F7F7F7;
+  --modal-color: #FFFFFF;
+  --card-color: #E8E2DB;
+
+  --input-field-border-color: #E8E2DB;
+  --input-field-focus-border-color: #C5A059;
+
+  --primary-button-color: #C5A059;
+  --primary-button-text-color: #FFFFFF;
+  --primary-button-hover-color: #ca9545;
+  --secondary-button-border-color: #1A1A1A;
+  --secondary-button-text-color: #1A1A1A;
+
+  --body-text-color: #555555;
+  --placeholder-color: #B0A99F;
+  --error-color: #8B0000;
+
+  --main-heading-font: 32px;
+  --sub-heading-font: 24px;
+  --body-text-font-16: 16px;
+  --body-text-font-14: 14px;
+
+  --heading-font-style: "serif";
+  --body-font-style: "sans-serif";
+}

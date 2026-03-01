@@ -1,14 +1,16 @@
-// src/pages/Login.jsx
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Login.css"; // Import CSS file
-import "./../utilities/card-template.css";
-import { login } from "../api/LoginApiService";
-import { Link } from "react-router-dom";
+import "./../styles/card-template.css";
+import { login } from "../services/LoginApiService";
+import { Link, useNavigate } from "react-router-dom";
+import Logo from "../assets/Logo1.png"
+import InputField from "../components/common/InputField/InputField";
 
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const navigate = useNavigate();
 
     const handleLogin = async (e: any) => {
         e.preventDefault();
@@ -16,7 +18,7 @@ export default function Login() {
         try {
             const result = await login(email, password);
             console.log(result);
-            alert("Login successful");
+            navigate("/home");
         } catch (err: any) {
             if (err.response?.data?.message) {
                 setError(err.response.data.message);
@@ -28,26 +30,31 @@ export default function Login() {
 
     return (
         <div className="Login">
+            <img className="logo" src={Logo} alt="Logo" />
             <div className="card-template">
                 <h1 className="login-title">CustomFits Login</h1>
                 <form onSubmit={handleLogin}>
                     <div className="input-group">
-                        <input
-                            type="email"
+                        <InputField
+                        id="login-email"
+                            type="text"
+                            name="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="Email"
-                            required
+                            required={true}
                         />
                     </div>
 
                     <div className="input-group">
-                        <input
+                        <InputField
+                            id="login-password"
                             type="password"
+                            name="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             placeholder="Password"
-                            required
+                            required={true}
                         />
                     </div>
 

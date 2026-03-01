@@ -1,5 +1,5 @@
 .card-template {
-    background: #ffffff;
+    background: var(--modal-color);
     padding: 40px 30px;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -9,14 +9,13 @@
     h2 {
         text-align: center;
         margin-bottom: 5px;
-        color: #333;
     }
 
     button {
         width: 100%;
         padding: 12px;
-        background-color: #6a0dad;
-        color: #fff;
+        background-color: var(--primary-button-color);
+        color: var(--primary-button-text-color);
         border: none;
         border-radius: 10px;
         font-size: 16px;
@@ -25,24 +24,7 @@
 
 
         &:hover {
-            background-color: #520aab;
-        }
-    }
-
-    input,
-    select {
-        padding: 12px 15px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        font-size: 16px;
-        outline: none;
-        transition: border-color 0.3s, box-shadow 0.3s;
-        margin-bottom: 15px;
-        width: 100%;
-
-        &:focus {
-            border-color: #6a0dad;
-            box-shadow: 0 0 5px rgba(106, 13, 173, 0.3);
+            background-color: var(--primary-button-hover-color);
         }
     }
 
@@ -52,12 +34,11 @@
         font-size: 14px;
 
         a {
-            color: #520aab;
+            color: var(--text-color);
             text-decoration: none;
 
             &:hover {
-                color: #1d2671;
-                text-decoration: underline;
+                color: var(--primary-button-hover-color);
             }
         }
     }

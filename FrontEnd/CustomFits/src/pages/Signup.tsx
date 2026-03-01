@@ -1,7 +1,10 @@
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import React, { useState} from "react";
+import type { ChangeEvent, FormEvent } from "react";
 import "./Signup.css";
-import "./../utilities/card-template.css";
-import { registerUser } from "../api/LoginApiService";
+import "./../styles/card-template.css";
+import { registerUser } from "../services/LoginApiService";
+import InputField from "../components/common/InputField/InputField";
+import InputSelect from "../components/common/InputSelect/InputSelect";
 
 interface RegisterRequest {
     name: string;
@@ -44,7 +47,7 @@ const Signup: React.FC = () => {
     return (
         <div className="Signup">
             <div className="card-template">
-                <h2>Join CustomFits</h2>
+                <h2 className="title">Join CustomFits</h2>
                 <p className="subtitle">Create your account</p>
 
                 {error && <p className="error">{error}</p>}
@@ -52,38 +55,48 @@ const Signup: React.FC = () => {
 
                 <form onSubmit={handleSubmit}>
                     <div className="input-group">
-                        <input
+                        <InputField
+                        id="signup-name"
                             type="text"
                             name="name"
                             placeholder="Full Name"
                             value={form.name}
-                            onChange={handleChange}
-                            required
+                            onChange={(e) => handleChange(e)}
+                            required={true}
                         />
 
-                        <input
-                            type="email"
+
+                        <InputField
+                            id="signup-email"
+                            type="text"
                             name="email"
                             placeholder="Email Address"
                             value={form.email}
-                            onChange={handleChange}
-                            required
+                            onChange={(e) => handleChange(e)}
+                            required={true}
                         />
 
-                        <input
+                        <InputField
+                            id="signup-password"
                             type="password"
                             name="password"
                             placeholder="Password"
                             value={form.password}
-                            onChange={handleChange}
-                            required
+                            onChange={(e) => handleChange(e)}
+                            required={true}
                         />
                     </div>
 
-                    <select name="role" value={form.role} onChange={handleChange}>
-                        <option value="Customer">Customer</option>
-                        <option value="Designer">Designer</option>
-                    </select>
+                    <InputSelect
+                        id="signup-role"
+                        name="role"
+                        options={[
+                            { value: "Customer", label: "Customer" },
+                            { value: "Designer", label: "Designer" },
+                        ]}
+                        value={form.role}
+                        onChange={handleChange}
+                    />
 
                     <button type="submit">Create Account</button>
                 </form>

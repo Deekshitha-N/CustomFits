@@ -1,0 +1,53 @@
+.HomePage {
+    /* padding: 24px;
+    background: #0f172a;
+    min-height: 100vh;
+    color: white;
+
+    .welcome h2 {
+        margin-bottom: 4px;
+    }
+
+    .welcome p {
+        color: #cbd5f5;
+    }
+
+    .actions {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
+        margin: 24px 0;
+    }
+
+    .action-card {
+        background: #1e293b;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        cursor: pointer;
+        font-weight: 500;
+    }
+
+    .action-card:hover {
+        background: #334155;
+    }
+
+    .section {
+        margin-top: 30px;
+    }
+
+    .order-card {
+        background: #020617;
+        padding: 16px;
+        border-radius: 8px;
+        margin-top: 12px;
+    }
+
+    .alert {
+        background: #1e293b;
+        padding: 14px;
+        border-left: 4px solid #6366f1;
+        border-radius: 6px;
+        margin-top: 30px;
+    } */
+}
