@@ -1,23 +1,25 @@
 import { useState } from "react";
-import "./Login.css"; // Import CSS file
+import "./Login.css";
 import "./../styles/card-template.css";
 import { login } from "../services/LoginApiService";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../assets/Logo1.png"
 import InputField from "../components/common/InputField/InputField";
+import { useUser } from "../context/UserContext";
 
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate();
+    const { setUser } = useUser();
 
     const handleLogin = async (e: any) => {
         e.preventDefault();
         setError("");
         try {
-            const result = await login(email, password);
-            console.log(result);
+            const user = await login(email, password);
+            setUser(user); 
             navigate("/home");
         } catch (err: any) {
             if (err.response?.data?.message) {

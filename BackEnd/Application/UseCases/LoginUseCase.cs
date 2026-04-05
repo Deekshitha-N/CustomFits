@@ -30,7 +30,7 @@ public class LoginUseCase
 
         var token = _tokenService.GenerateToken(user);
 
-        return new LoginResponse(token, user.Role);
+        return new LoginResponse(token, user);
     }
 
     public async Task<bool> IsAccountExists(string email)

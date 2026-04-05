@@ -1,18 +1,20 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios"; // Import your axios instance if you have a custom one
+import axios from "axios";
 import LandingPage from "./LandingPage";
+import { useUser } from "../context/UserContext";
 
 export default function Logout() {
     const navigate = useNavigate();
+    const userContext = useUser();
 
     useEffect(() => {
-        // Remove auth header from axios
+        userContext.setUser(null);
+
         delete axios.defaults.headers.common["Authorization"];
 
-        // Redirect to Landing page
         navigate("/", { replace: true });
     }, [navigate]);
 
-    return <LandingPage></LandingPage>;
+    return <LandingPage />;
 }

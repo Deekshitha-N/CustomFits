@@ -1,14 +1,15 @@
+using Domain.Entities;
+
 namespace Application.DTO;
 
 public class LoginResponse
 {
     public string Token { get; set; }
-    public string Role { get; set; }
-    //public string UserName { get; set; }
+    public User User { get; set; }
 
-    public LoginResponse(string token, string role)
+    public LoginResponse(string token, User user)
     {
         Token = token;
-        Role = role;
+        User = user;
     }
 }

@@ -64,8 +64,6 @@ const Signup: React.FC = () => {
                             onChange={(e) => handleChange(e)}
                             required={true}
                         />
-
-
                         <InputField
                             id="signup-email"
                             type="text"
@@ -75,7 +73,6 @@ const Signup: React.FC = () => {
                             onChange={(e) => handleChange(e)}
                             required={true}
                         />
-
                         <InputField
                             id="signup-password"
                             type="password"
@@ -85,18 +82,17 @@ const Signup: React.FC = () => {
                             onChange={(e) => handleChange(e)}
                             required={true}
                         />
+                        <InputSelect
+                            id="signup-role"
+                            name="role"
+                            options={[
+                                { value: "Customer", label: "Customer" },
+                                { value: "Designer", label: "Designer" },
+                            ]}
+                            value={form.role}
+                            onChange={handleChange}
+                        />
                     </div>
-
-                    <InputSelect
-                        id="signup-role"
-                        name="role"
-                        options={[
-                            { value: "Customer", label: "Customer" },
-                            { value: "Designer", label: "Designer" },
-                        ]}
-                        value={form.role}
-                        onChange={handleChange}
-                    />
 
                     <button type="submit">Create Account</button>
                 </form>

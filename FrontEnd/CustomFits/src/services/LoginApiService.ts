@@ -17,7 +17,14 @@ export interface RegisterRequest {
     role: "Customer" | "Designer";
 };
 
-export const registerUser = async (data: RegisterRequest): Promise<void> => {
+export interface User{
+    id: string;
+    name: string;
+    email: string;
+    role: string;
+}
+
+export const registerUser = async (data: RegisterRequest): Promise<User> => {
     const response = await api.post("/auth/register", data);
 
     return response.data;

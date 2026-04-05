@@ -21,10 +21,16 @@ public class LoginApiController : ControllerBase
     public async Task<IActionResult> Login(LoginRequest request)
     {
         var result = await _loginUseCase.Login(request);
+        var cookieOptions = new CookieOptions
+        {
+            HttpOnly = true,
+            Secure = true,
+            SameSite = SameSiteMode.Strict,
+            Expires = DateTime.UtcNow.AddHours(0.5)
+        };
+        Response.Cookies.Append("authToken", result.Token, cookieOptions);
 
-        Response.Headers.Add("Authorization", $"Bearer {result.Token}");
-
-        return Ok();
+        return Ok(result.User);
     }
 
     [HttpPost("register")]

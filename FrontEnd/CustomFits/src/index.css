@@ -1,0 +1,20 @@
+@import "./styles/variable.css";
+@import "./styles/button.css";
+
+:root {
+  font-family: var(--body-font-style);
+  font-size: var(--body-text-font-16);
+
+  color: var(--body-text-color);
+  background: var(--primary-color);
+}
+/* 
+a {
+  font-weight: 500;
+  color: var(--primary-button-color);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--primary-button-hover-color);
+} */
+
